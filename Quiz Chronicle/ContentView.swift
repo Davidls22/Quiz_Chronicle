@@ -10,10 +10,18 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
+            Image(systemName: "checkmark.circle")
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(Color.gray)
                 .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+                .scaleEffect(1.5)
+                
+            Text("Quiz Chronicle")
+                .font(.largeTitle)
+                .fontWeight(.semibold)
+                
+                
+                
         }
         .padding()
     }
