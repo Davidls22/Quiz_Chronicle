@@ -44,24 +44,25 @@ struct ContentView: View {
                 correctAnswerIndex: 0),
         ]
     
-    let mainColor = Color(red: 80/255, green: 140/255, blue: 200/255)
     let accentColor = Color(red: 200/255, green: 80/255, blue: 140/255)
     
     @State private var currentQuestionIndex = 0
+    @State private var isAnswerCorrect: Bool?
+    @State var mainColor = Color(red: 80/255, green: 140/255, blue: 200/255)
     
     var body: some View {
         ZStack {
             mainColor.ignoresSafeArea()
             VStack {
                 Text("\(currentQuestionIndex + 1) / \(questions.count)")
-                        .font(.callout)
-                        .multilineTextAlignment(.leading)
-                        .padding()
+                    .font(.callout)
+                    .multilineTextAlignment(.leading)
+                    .padding()
                 Text(questions[currentQuestionIndex].questionText)
-                        .font(.title)
-                        .bold()
-                        .multilineTextAlignment(.center)
-                        .padding()
+                    .font(.title)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .padding()
                 Spacer()
                 
                 Image("JRRTolkein")
@@ -70,51 +71,38 @@ struct ContentView: View {
                     .padding()
                 
                 HStack {
-                    Spacer()
-                    
-                    Button(action: {
-                        print("Tapped on Choice 1")
-                        moveToNextQuestion()
-                    }, label: {
-                        ChoiceTextView(choiceText: questions[currentQuestionIndex].possibleAnswers[0])
-                    })
-                    Spacer()
-                    
-                    Button(action: {
-                        print("Tapped on Choice 2")
-                        moveToNextQuestion()
-                    }, label: {
-                        ChoiceTextView(choiceText: questions[currentQuestionIndex].possibleAnswers[1])
-                    })
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        print("Tapped on Choice 3")
-                        moveToNextQuestion()
-                    }, label: {
-                        ChoiceTextView(choiceText: questions[currentQuestionIndex].possibleAnswers[2])
-                    })
-                    
-                    Spacer()
+                    ForEach(0..<questions[currentQuestionIndex].possibleAnswers.count) { answerIndex in
+                           Button(action: {
+                               print("Tapped on option with the text: \(self.questions[self.currentQuestionIndex].possibleAnswers[answerIndex])")
+                               self.isAnswerCorrect = answerIndex == self.questions[self.currentQuestionIndex].correctAnswerIndex
+                               self.mainColor = self.isAnswerCorrect != nil ? (self.isAnswerCorrect! ? Color.green : Color.red) : Color.blue
+                               self.moveToNextQuestion()
+                           }) {
+                               ChoiceTextView(choiceText: self.questions[self.currentQuestionIndex].possibleAnswers[answerIndex])
+                                   .background(self.mainColor)
+                                   .cornerRadius(10)
+                           }
+                           .disabled(self.isAnswerCorrect != nil)
+                       }
+                   }
+                               }
+                           }
+                       }
+
+                       func moveToNextQuestion() {
+                           if currentQuestionIndex < questions.count - 1 {
+                               currentQuestionIndex += 1
+                               isAnswerCorrect = nil // Reset the answer status when moving to the next question
+                           } else {
+                               currentQuestionIndex = 0
+                               isAnswerCorrect = nil
+                           }
+                       }
+                   }
+            
+            struct ContentView_Previews: PreviewProvider {
+                static var previews: some View {
+                    ContentView()
                 }
             }
-        }
-    }
-    
-    func moveToNextQuestion() {
-            if currentQuestionIndex < questions.count - 1 {
-                currentQuestionIndex += 1
-            } else {
-                // Handle end of questions, e.g., show a summary or restart the quiz
-                // For now, let's reset to the first question
-                currentQuestionIndex = 0
-            }
-        }
-    }
-
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
-    }
+            
