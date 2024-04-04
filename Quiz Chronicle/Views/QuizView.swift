@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  QuizView.swift
 //  Quiz Chronicle
 //
 //  Created by David Sugden on 29/12/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct QuizView: View {
     
     let accentColor = Color(red: 200/255, green: 80/255, blue: 140/255)
     
@@ -55,9 +55,9 @@ struct ContentView: View {
         }
     }
     
-    struct ContentView_Previews: PreviewProvider {
+    struct QuizView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            QuizView()
         }
     }
 }
