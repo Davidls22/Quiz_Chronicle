@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C57ABBFD2BBE236B00A9E197 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ABBFC2BBE236B00A9E197 /* Game.swift */; };
 		C57ABC012BBE32F700A9E197 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ABC002BBE32F700A9E197 /* WelcomeView.swift */; };
+		C57ABC032BBEFCE200A9E197 /* GameColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ABC022BBEFCE200A9E197 /* GameColor.swift */; };
+		C57ABC052BBEFE3100A9E197 /* BottomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ABC042BBEFE3100A9E197 /* BottomTextView.swift */; };
 		C5ACB8D32B3F401B00436E91 /* Quiz_ChronicleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ACB8D22B3F401B00436E91 /* Quiz_ChronicleApp.swift */; };
 		C5ACB8D52B3F401B00436E91 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ACB8D42B3F401B00436E91 /* QuizView.swift */; };
 		C5ACB8D72B3F401E00436E91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5ACB8D62B3F401E00436E91 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		C57ABBFC2BBE236B00A9E197 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		C57ABC002BBE32F700A9E197 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		C57ABC022BBEFCE200A9E197 /* GameColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameColor.swift; sourceTree = "<group>"; };
+		C57ABC042BBEFE3100A9E197 /* BottomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTextView.swift; sourceTree = "<group>"; };
 		C5ACB8CF2B3F401B00436E91 /* Quiz Chronicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiz Chronicle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5ACB8D22B3F401B00436E91 /* Quiz_ChronicleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz_ChronicleApp.swift; sourceTree = "<group>"; };
 		C5ACB8D42B3F401B00436E91 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
@@ -53,7 +57,9 @@
 			isa = PBXGroup;
 			children = (
 				C57ABC002BBE32F700A9E197 /* WelcomeView.swift */,
+				C57ABC022BBEFCE200A9E197 /* GameColor.swift */,
 				C5ACB8E22B4DC69D00436E91 /* ChoiceTextView.swift */,
+				C57ABC042BBEFE3100A9E197 /* BottomTextView.swift */,
 				C5ACB8D42B3F401B00436E91 /* QuizView.swift */,
 			);
 			path = Views;
@@ -169,6 +175,8 @@
 				C57ABC012BBE32F700A9E197 /* WelcomeView.swift in Sources */,
 				C57ABBFD2BBE236B00A9E197 /* Game.swift in Sources */,
 				C5ACB8D52B3F401B00436E91 /* QuizView.swift in Sources */,
+				C57ABC052BBEFE3100A9E197 /* BottomTextView.swift in Sources */,
+				C57ABC032BBEFCE200A9E197 /* GameColor.swift in Sources */,
 				C5ACB8E32B4DC69D00436E91 /* ChoiceTextView.swift in Sources */,
 				C5ACB8D32B3F401B00436E91 /* Quiz_ChronicleApp.swift in Sources */,
 			);
